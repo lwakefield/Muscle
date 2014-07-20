@@ -1,0 +1,67 @@
+@import 'lesshat.less';
+@cols: 12;
+[class*='row'] {
+    .display(flex);
+    &[class*='-start'] {
+        .justify-content(flex-start);
+    }
+    &[class*='-end'] {
+        .justify-content(flex-end);
+    }
+    &[class*='-center'] {
+        .justify-content(center);
+    }
+    &[class*='-between'] {
+        .justify-content(flex-between);
+    }
+    &[class*='-around'] {
+        .justify-content(flex-around);
+    }
+    &[class*='-top'] {
+        .align-items(flex-start);
+    }
+    &[class*='-middle'] {
+        .align-items(center);
+    }
+    &[class*='-bottom'] {
+        .align-items(flex-bottom);
+    }
+}
+.gen-cols-xs();
+.gen-cols-xs(@i: 1) when (@i =<@cols) {
+    .col-@{i}-xs {
+        width: (@i * 100% /@cols);
+        .flex-basis(@i * 100% /@cols);
+    }
+    .gen-cols-xs(@i + 1);
+}
+@media (min-width: 48em) {
+    .gen-cols-sm();
+    .gen-cols-sm(@i: 1) when (@i =<@cols) {
+        .col-@{i}-sm {
+            width: (@i * 100% /@cols);
+            .flex-basis(@i * 100% /@cols);
+        }
+        .gen-cols-sm(@i + 1);
+    }
+}
+@media (min-width: 62em) {
+    .gen-cols-md();
+    .gen-cols-md(@i: 1) when (@i =<@cols) {
+        .col-@{i}-md {
+            width: (@i * 100% /@cols);
+            .flex-basis(@i * 100% /@cols);
+        }
+        .gen-cols-md(@i + 1);
+    }
+}
+@media (min-width: 75em) {
+    .gen-cols-lg();
+    .gen-cols-lg(@i: 1) when (@i =<@cols) {
+        .col-@{i}-lg {
+            width: (@i * 100% /@cols);
+            .flex-basis(@i * 100% /@cols);
+        }
+        .gen-cols-lg(@i + 1);
+    }
+}
