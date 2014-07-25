@@ -1,37 +1,44 @@
 @import 'lesshat.less';
 @cols: 12;
-[class*='row'] {
+
+.row {
     .display(flex);
-    &[class*='-start'] {
-        .justify-content(flex-start);
-    }
-    &[class*='-end'] {
-        .justify-content(flex-end);
-    }
-    &[class*='-center'] {
-        .justify-content(center);
-    }
-    &[class*='-between'] {
-        .justify-content(flex-between);
-    }
-    &[class*='-around'] {
-        .justify-content(flex-around);
-    }
-    &[class*='-top'] {
-        .align-items(flex-start);
-    }
-    &[class*='-middle'] {
-        .align-items(center);
-    }
-    &[class*='-bottom'] {
-        .align-items(flex-bottom);
-    }
+    .flex-wrap(wrap);
 }
+.row-start {
+    .justify-content(flex-start);
+}
+.row-end {
+    .justify-content(flex-end);
+}
+.row-center {
+    .justify-content(center);
+}
+.row-between {
+    .justify-content(flex-between);
+}
+.row-around {
+    .justify-content(flex-around);
+}
+.row-top {
+    .align-items(flex-start);
+}
+.row-middle {
+    .align-items(center);
+}
+.row-bottom {
+    .align-items(flex-bottom);
+}
+
+.gen-col() {
+    width: (@i * 100% /@cols);
+    .flex-basis(@i * 100% /@cols);
+}
+
 .gen-cols-xs();
 .gen-cols-xs(@i: 1) when (@i =<@cols) {
     .col-@{i}-xs {
-        width: (@i * 100% /@cols);
-        .flex-basis(@i * 100% /@cols);
+       .gen-col();
     }
     .gen-cols-xs(@i + 1);
 }
@@ -39,8 +46,7 @@
     .gen-cols-sm();
     .gen-cols-sm(@i: 1) when (@i =<@cols) {
         .col-@{i}-sm {
-            width: (@i * 100% /@cols);
-            .flex-basis(@i * 100% /@cols);
+           .gen-col();
         }
         .gen-cols-sm(@i + 1);
     }
@@ -49,8 +55,7 @@
     .gen-cols-md();
     .gen-cols-md(@i: 1) when (@i =<@cols) {
         .col-@{i}-md {
-            width: (@i * 100% /@cols);
-            .flex-basis(@i * 100% /@cols);
+           .gen-col();
         }
         .gen-cols-md(@i + 1);
     }
@@ -59,8 +64,7 @@
     .gen-cols-lg();
     .gen-cols-lg(@i: 1) when (@i =<@cols) {
         .col-@{i}-lg {
-            width: (@i * 100% /@cols);
-            .flex-basis(@i * 100% /@cols);
+           .gen-col();
         }
         .gen-cols-lg(@i + 1);
     }
