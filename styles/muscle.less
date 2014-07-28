@@ -2,6 +2,7 @@
 @cols: 12;
 
 .row {
+    width: 100%;
     .display(flex);
     .flex-wrap(wrap);
 }
@@ -15,10 +16,10 @@
     .justify-content(center);
 }
 .row-between {
-    .justify-content(flex-between);
+    .justify-content(space-between);
 }
 .row-around {
-    .justify-content(flex-around);
+    .justify-content(space-around);
 }
 .row-top {
     .align-items(flex-start);
@@ -28,6 +29,9 @@
 }
 .row-bottom {
     .align-items(flex-bottom);
+}
+.row-basline {
+    .align-items(baseline);
 }
 
 .gen-col() {
