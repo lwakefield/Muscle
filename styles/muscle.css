@@ -59,13 +59,13 @@
   align-items: center;
 }
 .row-bottom {
-  -webkit-box-align: flex-bottom;
-  -moz-box-align: flex-bottom;
-  -webkit-align-items: flex-bottom;
-  -ms-flex-align: flex-bottom;
-  align-items: flex-bottom;
+  -webkit-box-align: end;
+  -moz-box-align: end;
+  -webkit-align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
-.row-basline {
+.row-baseline {
   -webkit-box-align: baseline;
   -moz-box-align: baseline;
   -webkit-align-items: baseline;
