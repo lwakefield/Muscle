@@ -1,10 +1,11 @@
 @import 'lesshat.less';
-@cols: 12;
+@cols: 			12;
+@padding:		0.25rem;
 
 .row {
-    width: 100%;
     .display(flex);
     .flex-wrap(wrap);
+		.flex-direction(row);
 }
 .row-start {
     .justify-content(flex-start);
@@ -35,8 +36,12 @@
 }
 
 .gen-col() {
-    width: (@i * 100% /@cols);
+		.box-sizing(border-box);
+		padding: 0 @padding;
+		.display(flex);
+    max-width: (@i * 100% /@cols);
     .flex-basis(@i * 100% /@cols);
+		.flex-direction(column);
 }
 
 .gen-cols-xs();
