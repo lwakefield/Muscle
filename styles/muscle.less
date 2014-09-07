@@ -1,80 +1,81 @@
 @import 'lesshat.less';
-@cols: 			12;
+@cols: 12;
 @padding:		0.25rem;
 
 .row {
-    .display(flex);
-    .flex-wrap(wrap);
-		.flex-direction(row);
+	.display(flex);
+	.flex-wrap(wrap);
+	.flex-direction(row);
 }
 .row-start {
-    .justify-content(flex-start);
+	.justify-content(flex-start);
 }
 .row-end {
-    .justify-content(flex-end);
+	.justify-content(flex-end);
 }
 .row-center {
-    .justify-content(center);
+	.justify-content(center);
 }
 .row-between {
-    .justify-content(space-between);
+	.justify-content(space-between);
 }
 .row-around {
-    .justify-content(space-around);
+	.justify-content(space-around);
 }
 .row-top {
-    .align-items(flex-start);
+	.align-items(flex-start);
 }
 .row-middle {
-    .align-items(center);
+	.align-items(center);
 }
 .row-bottom {
-    .align-items(flex-end);
+	.align-items(flex-end);
 }
 .row-baseline {
-    .align-items(baseline);
+	.align-items(baseline);
 }
-
 .gen-col() {
-		.box-sizing(border-box);
-		padding: 0 @padding;
-		.display(flex);
-    max-width: (@i * 100% /@cols);
-    .flex-basis(@i * 100% /@cols);
-		.flex-direction(column);
-}
+	.box-sizing(border-box);
+	padding: 0@padding;
 
+.display(flex);
+	max-width: (@i * 100% /@cols);
+
+.flex-basis(@i * 100% /@cols);
+
+.flex-direction(column);
+}
 .gen-cols-xs();
-.gen-cols-xs(@i: 1) when (@i =<@cols) {
-    .col-@{i}-xs {
-       .gen-col();
-    }
-    .gen-cols-xs(@i + 1);
+ .gen-cols-xs(@i: 1) when (@i =<@cols) {
+	.col-@{i}-xs {
+		.gen-col();
+	}
+	.gen-cols-xs(@i + 1);
 }
 @media (min-width: 48em) {
-    .gen-cols-sm();
-    .gen-cols-sm(@i: 1) when (@i =<@cols) {
-        .col-@{i}-sm {
-           .gen-col();
-        }
-        .gen-cols-sm(@i + 1);
-    }
+	.gen-cols-sm();
+	.gen-cols-sm(@i: 1) when (@i =<@cols) {
+		.col-@{i}-sm {
+			.gen-col();
+		}
+		.gen-cols-sm(@i + 1);
+	}
 }
 @media (min-width: 62em) {
-    .gen-cols-md();
-    .gen-cols-md(@i: 1) when (@i =<@cols) {
-        .col-@{i}-md {
-           .gen-col();
-        }
-        .gen-cols-md(@i + 1);
-    }
+	.gen-cols-md();
+	.gen-cols-md(@i: 1) when (@i =<@cols) {
+		.col-@{i}-md {
+			.gen-col();
+		}
+		.gen-cols-md(@i + 1);
+	}
 }
 @media (min-width: 75em) {
-    .gen-cols-lg();
-    .gen-cols-lg(@i: 1) when (@i =<@cols) {
-        .col-@{i}-lg {
-           .gen-col();
-        }
-        .gen-cols-lg(@i + 1);
-    }
+	.gen-cols-lg();
+	.gen-cols-lg(@i: 1) when (@i =<@cols) {
+		.col-@{i}-lg {
+			.gen-col();
+		}
+		.gen-cols-lg(@i + 1);
+	}
 }
