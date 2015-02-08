@@ -7,31 +7,36 @@
 	.flex-wrap(wrap);
 	.flex-direction(row);
 }
-.row-start {
+.col {
+	.display(flex);
+	.flex-wrap(wrap);
+	.flex-direction(column);
+}
+.justify-start {
 	.justify-content(flex-start);
 }
-.row-end {
+.justify-end {
 	.justify-content(flex-end);
 }
-.row-center {
+.justify-center {
 	.justify-content(center);
 }
-.row-between {
+.justify-between {
 	.justify-content(space-between);
 }
-.row-around {
+.justify-around {
 	.justify-content(space-around);
 }
-.row-top {
+.align-top {
 	.align-items(flex-start);
 }
-.row-middle {
+.align-center {
 	.align-items(center);
 }
-.row-bottom {
+.align-bottom {
 	.align-items(flex-end);
 }
-.row-baseline {
+.align-baseline {
 	.align-items(baseline);
 }
 .gen-col() {
